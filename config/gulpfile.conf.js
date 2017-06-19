@@ -23,6 +23,10 @@ let jsGlob = ['**/*.js', '!{node_modules,node_modules/**}', '!{docs,doc/**}',
   '!{dist,dist/**}', '!{coverage,coverage/**}', '!src/{res,res/**}',
   '!config/env.conf.js'];
 
+// setting up paths
+const clientPath = 'client';
+const serverPath = 'server';
+
 // Define `TypeScript` files to watch/ignore
 let tsGlob = ['**/*.ts', '!{node_modules,node_modules/**}', '!{docs,doc/**}',
   '!{dist,dist/**}', '!{coverage,coverage/**}', '!src/{res,res/**}'];
@@ -176,6 +180,8 @@ gulp.task('serve:watch', () => {
     script : 'server.js',
     ext : 'js'
   });
+
+  // nodemon(`-w ${serverPath} ${serverPath}`);
 });
 
 // Use the 'del' module to clear all traces of documentation
