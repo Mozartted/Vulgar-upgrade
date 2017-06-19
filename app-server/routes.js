@@ -22,7 +22,6 @@ export default function(app) {
   app.route('/*')
     .get((req, res) => {
       // Load our src/app.html file
-      //** Note that the root is set to the parent of this folder, ie the app root **
       res.sendFile('/dist/index.html', { root: __dirname + "/../"});
     });
 }
